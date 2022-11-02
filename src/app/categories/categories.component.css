@@ -1,0 +1,27 @@
+#maindiv
+{
+border:1px solid gainsboro;
+height: auto;
+max-width: 50%;
+min-width: 30%;
+margin:0px auto;
+box-shadow: 1px 1px 5px 5px gray;
+text-align: center;
+}
+input
+{
+ max-width:80%;
+margin: 0px auto;
+margin-top: 5px;    
+   
+}
+#x
+{
+
+    border:0px;
+    color:green;
+    width: 10px;
+    height: 10px;
+
+    
+}

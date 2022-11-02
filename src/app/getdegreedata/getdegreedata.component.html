@@ -1,0 +1,17 @@
+<h1 style="text-align:center ;">Degree DataTable</h1><br>
+<table class="table table-striped" style=" border-radius:5px;text-align:center; width:80%;  margin: 0px auto; color:black; background-color:rgb(199, 199, 199)">
+    <thead>
+        <tr style="font-size:x-large; color:rgb(21, 97, 184);"  >
+            <th>Degree Name</th>
+            <th>Degree Note</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of degree.data">
+    
+        <td>{{item.degreeName}}</td>
+        <td>{{item.degreeNote}}</td>
+    </tr>
+</tbody>
+</table>
+

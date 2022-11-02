@@ -1,0 +1,53 @@
+#bodydiv
+{
+border: 0px solid black;
+width: 100%;
+text-align: center;
+
+}
+#formdiv
+{
+
+    border: 0px solid white;
+    margin:0px auto;
+    margin-top:30px;
+    width: 70%;
+    
+    
+}
+input{
+    margin:0px auto;
+}
+#finput
+{
+
+    width:35%;
+    
+
+}
+#uninput
+{
+    position: relative;
+    float: left;
+    width: 35%;
+    margin-left: 70px;
+    
+
+}
+
+@media screen and (max-width: 900px) {
+    #formdiv {
+      width:100%;
+
+    }
+    #finput
+    {
+        width:50%;
+
+    }
+    #uninput
+    {
+        width:50%;
+        margin:0px auto;
+    }
+  }

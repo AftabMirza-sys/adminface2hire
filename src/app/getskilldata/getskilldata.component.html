@@ -1,0 +1,17 @@
+<h1 style="text-align:center ;">Skill DataTable</h1><br>
+<table class="table table-striped" style=" border-radius:5px;text-align:center; width:80%;  margin: 0px auto; color:black; background-color:rgb(199, 199, 199)">
+    <thead>
+        <tr style="font-size:x-large; color:rgb(21, 97, 184);"  >
+            <th>Skill Name</th>
+            <th>Skill Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of skill.data">
+    
+        <td>{{item.skillName}}</td>
+        <td>{{item.skillDescription}}</td>
+    </tr>
+</tbody>
+</table>
+

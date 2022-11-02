@@ -1,0 +1,18 @@
+
+<h1 style="text-align:center ;">Interest DataTable</h1><br>
+<table class="table table-striped" style=" border-radius:5px;text-align:center; width:80%;  margin: 0px auto; color:black; background-color:rgb(199, 199, 199)">
+    <thead>
+        <tr style="font-size:x-large; color:rgb(21, 97, 184);"  >
+            <th> Interest Name</th>
+            <th> Interest Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of interest.data">
+    
+        <td>{{item.interestName}}</td>
+        <td>{{item.interestDescription}}</td>
+    </tr>
+</tbody>
+</table>
+
