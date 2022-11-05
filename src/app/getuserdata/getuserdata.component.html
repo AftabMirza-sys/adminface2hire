@@ -1,28 +1,35 @@
-<h1 style="text-align:center;">Users DataTable</h1><br>
-<table class="table table-striped " style="margin: 0px auto;">
+<br>
+<h1 style=" overflow-x:auto;">Users DataTable</h1><br>
+<table id="tableid" class="table table-striped">
     <thead>
-        <tr style="font-size:medium; color:rgb(21, 97, 184);"  >
-            <th >User Name</th>
+        <tr style="font-size:small; background-color: rgb(51, 151, 93);"  >
+            <th>User Name</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
-            <th>Password</th>
             <th>Role</th>
             <th>PhoneNo</th>
             <th>CellNo</th>
             <th>Address</th>
             <th>ZipCode</th>
-            <th>Email verified</th>
-            <th>CreatedBy</th>
-            
-        </tr>
+            <th> Verification</th>
+            </tr>
     </thead>
     <tbody>
-    <tr>
+        <tr *ngFor="let item of user.data">
     
-        <td></td>
-        <td></td>
-    </tr>
+            <td>{{item.userName}}</td>
+            <td>{{item.firstName}}</td>
+            <td>{{item.lastName}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.role}}</td>
+            <td>{{item.phoneNo}}</td>
+            <td>{{item.cell}}</td>
+            <td>{{item.address1}}</td>
+            <td>{{item.zipCode}}</td>
+            <td>{{item.emailVerified}}</td>
+           
+        </tr>
 </tbody>
 </table>
 

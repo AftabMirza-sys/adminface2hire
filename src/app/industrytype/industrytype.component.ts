@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-industrytype',
@@ -13,7 +14,7 @@ export class IndustrytypeComponent implements OnInit {
   }
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private route:Router) { }
 
   message: boolean = false;
   onSubmit(intype: any) {
@@ -28,4 +29,11 @@ export class IndustrytypeComponent implements OnInit {
 
   }
 
+
+
+  onlogout()
+  {
+    localStorage.removeItem('token');
+    this.route.navigate(['./']);
+  }
 }

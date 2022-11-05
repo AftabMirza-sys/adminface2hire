@@ -8,12 +8,16 @@ import{UsersdataService} from '../services/usersdata.service';
 })
 export class GetuserdataComponent implements OnInit {
   user:any;
-  constructor(private userdata:UsersdataService) { 
-   
+  constructor(private usersdata:UsersdataService) { 
+    this.usersdata.userdata().subscribe((userdata)=>{
+      console.warn("userdata",userdata);
+      this.user = userdata;
       
-      
-   
+    });
   }
+      
+   
+  
   ngOnInit(): void {
   }
 

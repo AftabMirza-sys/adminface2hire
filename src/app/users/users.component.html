@@ -23,40 +23,7 @@
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
         <!-- Navbar Search -->
-        <li class="nav-item">
-          <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-            <i class="fas fa-search"></i>
-          </a>
-          <div class="navbar-search-block">
-            <form class="form-inline">
-              <div class="input-group input-group-sm">
-                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-                <div class="input-group-append">
-                  <button class="btn btn-navbar" type="submit">
-                    <i class="fas fa-search"></i>
-                  </button>
-                  <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </li>
-  
-        <!-- Messages Dropdown Menu -->
-     
-        <!-- Notifications Dropdown Menu -->
-        <li class="nav-item">
-          <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-            <i class="fas fa-expand-arrows-alt"></i>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-            <i class="fas fa-th-large"></i>
-          </a>
-        </li>
+        <Button class="btn btn-danger" (click)="onlogout()">Logout</Button>
       </ul>
     </nav>
     <!-- /.navbar -->
@@ -183,30 +150,32 @@
                 <li class="breadcrumb-item active">User Home</li>
               </ol>
             </div><!-- /.col -->
-            <div id="bodydiv">
+            <div id="bodydiv"><br>
             <h1>Create A New User</h1>
             
             <div id="formdiv">
-              <div class="alert alert-success" *ngIf="message" >Successfully User Created<button class="alert alert-success" id="x"(click)="removemessage()">X</button> </div>
+              <div style="border-radius: 2px;  background-color:white; width: 40%; margin: 0px auto; color:#009670; padding-left: 3px;"*ngIf="message" >
+                 Successfully User Created<button style="margin-left:40px; border-radius: 0px;" class="btn btn-success" id="x"(click)="removemessage()">X</button> </div>
        
+              <br>
               <form #createuser ="ngForm"(ngSubmit)="onSubmit(createuser.value)" >
-                <input type="text" class="form-control" name="username" placeholder="Write User Name" required ngModel id="uninput" required  ngModel>
-                <input type="text" class="form-control" name="fname" placeholder="Write First Name" required  ngModel id="finput" required ngModel> <br>
-                <input type="text" class="form-control" name="lname" placeholder="Write Last Name" required ngModel id="uninput" required ngModel>
+                <input type="text" class="form-control" name="userName" placeholder="Write User Name" required ngModel id="uninput" required  ngModel>
+                <input type="text" class="form-control" name="firstName" placeholder="Write First Name" required  ngModel id="finput" required ngModel> <br>
+                <input type="text" class="form-control" name="lastName" placeholder="Write Last Name" required ngModel id="uninput" required ngModel>
                 <input type="text" class="form-control" name="email" placeholder="Write Email Address " required  ngModel id="finput" required ngModel><br>
                 <input type="password" class="form-control" name="password" placeholder="Write Password" required ngModel id="uninput" required ngModel>
                 <input type="text" class="form-control" name="role" placeholder="Write Role" required  ngModel id="finput" required ngModel><br>
-                <input type="text" class="form-control" name="phone" placeholder="Write PhoneNo" required ngModel id="uninput" required ngModel>
+                <input type="text" class="form-control" name="phoneNo" placeholder="Write PhoneNo" required ngModel id="uninput" required ngModel>
                 <input type="text" class="form-control" name="cell" placeholder="Write CellNo" required  ngModel id="finput" required ngModel><br>
                 <input type="text" class="form-control" name="address1" placeholder="Write Address" required ngModel id="uninput" required ngModel>
-                <input type="text" class="form-control" name="zipcode" placeholder="Write ZipCode" required  ngModel id="finput" required ngModel>
+                <input type="text" class="form-control" name="zipCode" placeholder="Write ZipCode" required  ngModel id="finput" required ngModel>
                 <br>
-               <select name="verified" id="uninput" class="form-control">
+               <select name="emailVerified" id="uninput" class="form-control">
                 <option value="True">True</option>
                 <option value="False">False</option>
                </select>
                 
-                <input type="text" class="form-control" name="createdby" placeholder="Write Createdby" required  ngModel id="finput" required ngModel><br>
+                <input type="text" class="form-control" name="createdBy" placeholder="Write Createdby" required  ngModel id="finput" required ngModel><br>
                 
                 
                 
@@ -214,9 +183,13 @@
                 <input type="submit" class="btn btn-secondary mb-4" id="submitinput" value="Create"><br>
               </form>
             </div>
-           
+            
           </div>
+          
+       <div id="tablediv" >
         <app-getuserdata></app-getuserdata>
+
+       </div>
           
           
           </div><!-- /.row -->

@@ -13,21 +13,34 @@ import { SkillComponent } from './skill/skill.component';
 import { UsersComponent } from './users/users.component';
 import { FaqcategoryComponent } from  './faqcategory/faqcategory.component';
 import { IndustrytypeComponent } from './industrytype/industrytype.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-{path:'dashboard',component:DashboardComponent},
-{path:'roles',component:RolesComponent},
-{path:'user',component:UsersComponent},
-{path:'categories',component:CategoriesComponent},
-{path:'degree',component:DegreeComponent},
-{path:'faq',component:FaqComponent},
-{path:'industry',component:IndustryComponent},
-{path:'intrest',component:IntrestComponent},
-{path:'major',component:MajorComponent},
-{path:'skill',component:SkillComponent},
+{path:'dashboard',component:DashboardComponent,
+canActivate:[AuthGuard]},
+{path:'roles',component:RolesComponent,
+canActivate:[AuthGuard]},
+{path:'user',component:UsersComponent,
+canActivate:[AuthGuard]},
+{path:'categories',component:CategoriesComponent,
+canActivate:[AuthGuard]},
+{path:'degree',component:DegreeComponent,
+canActivate:[AuthGuard]},
+{path:'faq',component:FaqComponent,
+canActivate:[AuthGuard]},
+{path:'industry',component:IndustryComponent,
+canActivate:[AuthGuard]},
+{path:'intrest',component:IntrestComponent,
+canActivate:[AuthGuard]},
+{path:'major',component:MajorComponent,
+canActivate:[AuthGuard]},
+{path:'skill',component:SkillComponent,
+canActivate:[AuthGuard]},
 {path:'',component:LoginComponent},
-{path:'faqcategory',component:FaqcategoryComponent},
-{path:'industrytype',component:IndustrytypeComponent},
+{path:'faqcategory',component:FaqcategoryComponent,
+canActivate:[AuthGuard]},
+{path:'industrytype',component:IndustrytypeComponent,
+canActivate:[AuthGuard]},
 ];
 
 @NgModule({

@@ -37,6 +37,7 @@ import { FaqcategoryComponent } from './faqcategory/faqcategory.component';
 import { IndustrytypeComponent } from './industrytype/industrytype.component';
 import { GetfaqcategoryComponent } from './getfaqcategory/getfaqcategory.component';
 import { GetintypeComponent } from './getintype/getintype.component';
+import { AuthGuard } from './auth.guard';
 
 
 @NgModule({
@@ -83,7 +84,7 @@ import { GetintypeComponent } from './getintype/getintype.component';
     
   
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-faqcategory',
@@ -8,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FaqcategoryComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private route:Router) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +26,10 @@ export class FaqcategoryComponent implements OnInit {
     this.message = false;
 
   }
-
+  onlogout()
+  {
+    localStorage.removeItem('token');
+    this.route.navigate(['./']);
+  }
 
 }

@@ -9,8 +9,11 @@ private _loginurl = "http://localhost:3300/user/login";
   
 constructor(private http : HttpClient) { }
 
-loginuser(user:any)
+
+
+login(user:any)
   {
+    console.log(user);
 return this.http.post<any>(this._loginurl,user);
 }
 

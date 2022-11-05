@@ -1,16 +1,26 @@
-table
+#tableid
 {
     
-    border-radius:3px;
-    text-align:center; 
-    width:80%; 
-    color:black; 
-    background-color:rgb(199, 199, 199); 
+  
+  width:60%;
+  text-align: center;
+
+    
     
 }
 th{
-    border-right: 1px solid black;
-    
+   min-width:100px;
+    font-weight: 400;
+    font-style: inherit;
+    border: 1px solid white;
+    text-align: center;
+}
+td{
+   
+    font-weight: 400;
+    font-style: inherit;
+    border: 1px solid white;
+    text-align: center;
 }
 
 @media screen and (max-width: 900px) {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {AuthService} from '../services/auth.service';
 
 @Component({
@@ -7,22 +8,47 @@ import {AuthService} from '../services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-loginuserdata:any = {};
-
-  constructor(private auth : AuthService) { }
+status:any;
+message:any;
+token:any;
+  constructor(
+   private authService : AuthService, private route : Router
+  ) { }
 
   ngOnInit(): void {
   }
 
-  loginuser()
-  {
-    console.log('loginuserdata',this.loginuserdata);
-    this.auth.loginuser(this.loginuserdata)
-    .subscribe(
-      res => console.log(res),
-      err => console.log(err) 
-    )
-  }
+onsubmit( logindata:any)
+{
+this.authService.login(logindata).subscribe(res=>{console.log(res);
+this.status = res.status;
+
+if(this.status == true){
+  this.token = res.data.id;
+  localStorage.setItem('token',this.token);
+this.route.navigate(['./dashboard']);
+
+}
+else
+{
+  this.route.navigate(['./']);
+  this.message = res.message;
+}
+
+
+
+
+});
+  
+
+}
+
+
+
+
+
+
+
 
 
 }

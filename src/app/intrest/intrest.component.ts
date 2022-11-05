@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-intrest',
@@ -15,7 +16,7 @@ export class IntrestComponent implements OnInit {
   }
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private route:Router) { }
 
   message: boolean = false;
   onSubmit(interestdata: any) {
@@ -29,6 +30,10 @@ export class IntrestComponent implements OnInit {
     this.message = false;
 
   }
-
+  onlogout()
+  {
+    localStorage.removeItem('token');
+    this.route.navigate(['./']);
+  }
 
 }
