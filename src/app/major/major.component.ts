@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-major',
@@ -8,7 +9,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./major.component.css']
 })
 export class MajorComponent implements OnInit {
-  constructor(private http: HttpClient, private route:Router) { }
+  userid:any;
+  username:any;
+  constructor(private http: HttpClient, private route:Router) {
+
+this.userid = localStorage.getItem('token');
+this.username = localStorage.getItem('username');
+
+   }
 
   ngOnInit(): void {
   }
@@ -17,7 +25,7 @@ export class MajorComponent implements OnInit {
 
   message: boolean = false;
   onSubmit(majordata: any) {
-    this.http.post('http://localhost:3300/major/addMajor', majordata).subscribe((result) => {
+    this.http.post(environment.baseUrl+'/major/addMajor', majordata).subscribe((result) => {
       console.warn("result", result);
       this.message = true;
     });

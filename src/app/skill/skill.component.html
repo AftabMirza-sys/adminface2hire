@@ -43,7 +43,7 @@
             <img src="assets/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">Your Name</a>
+            <i class="d-block" style="font-size: 20px; margin-top: 5px;">{{username}}</i>
           </div>
         </div>
   
@@ -161,7 +161,7 @@
         <form #skilldata ="ngForm"(ngSubmit)="onSubmit(skilldata.value)">
           <input type="text" class="form-control" name="skillName" placeholder="Write Skill Name" required ngModel><br>
           <input type="text" class="form-control" name="skillDescription" placeholder="Write Skill Description..." required  ngModel><br>
-          <input type="text" class="form-control" name="CreatedBy" placeholder="Write CreatedBy" required  ngModel><br>
+          <input type="hidden" class="form-control" name="CreatedBy"  required  [(ngModel)]="userid" value="userid"><br>
           
           <input type="submit" class="btn btn-secondary mb-4" value="Create"><br>
         </form>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-degree',
@@ -8,16 +9,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./degree.component.css']
 })
 export class DegreeComponent implements OnInit {
-
-  constructor(private http: HttpClient, private route:Router) { }
-
+userid :any;
+username:any;
+  constructor(private http: HttpClient, private route:Router) {
+    this.userid = localStorage.getItem('token');
+    this.username =localStorage.getItem('username');
+   }
+ 
   ngOnInit(): void {
   }
 
   message: boolean = false;
   onSubmit(degreedata: any) {
     
-    this.http.post('http://localhost:3300/degree/addDegree', degreedata).subscribe((result) => {
+    this.http.post(environment.baseUrl+'/degree/addDegree', degreedata).subscribe((result) => {
       
       this.message = true;
     });

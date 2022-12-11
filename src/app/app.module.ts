@@ -5,7 +5,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
 
@@ -38,6 +38,9 @@ import { IndustrytypeComponent } from './industrytype/industrytype.component';
 import { GetfaqcategoryComponent } from './getfaqcategory/getfaqcategory.component';
 import { GetintypeComponent } from './getintype/getintype.component';
 import { AuthGuard } from './auth.guard';
+import { RolebyidComponent } from './rolebyid/rolebyid.component';
+
+
 
 
 @NgModule({
@@ -67,6 +70,8 @@ import { AuthGuard } from './auth.guard';
     IndustrytypeComponent,
     GetfaqcategoryComponent,
     GetintypeComponent,
+    RolebyidComponent,
+    
     
   ],
   imports: [
@@ -79,7 +84,7 @@ import { AuthGuard } from './auth.guard';
     MatButtonModule,
     MatCardModule,
     HttpClientModule,
-    FormsModule,
+    FormsModule
   
     
   

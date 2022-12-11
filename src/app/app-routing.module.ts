@@ -14,12 +14,17 @@ import { UsersComponent } from './users/users.component';
 import { FaqcategoryComponent } from  './faqcategory/faqcategory.component';
 import { IndustrytypeComponent } from './industrytype/industrytype.component';
 import { AuthGuard } from './auth.guard';
+import { RolebyidComponent } from './rolebyid/rolebyid.component';
+
 
 const routes: Routes = [
 {path:'dashboard',component:DashboardComponent,
 canActivate:[AuthGuard]},
 {path:'roles',component:RolesComponent,
 canActivate:[AuthGuard]},
+{path:'rolebyid',component:RolebyidComponent,
+canActivate:[AuthGuard]},
+
 {path:'user',component:UsersComponent,
 canActivate:[AuthGuard]},
 {path:'categories',component:CategoriesComponent,
@@ -41,6 +46,9 @@ canActivate:[AuthGuard]},
 canActivate:[AuthGuard]},
 {path:'industrytype',component:IndustrytypeComponent,
 canActivate:[AuthGuard]},
+
+
+
 ];
 
 @NgModule({

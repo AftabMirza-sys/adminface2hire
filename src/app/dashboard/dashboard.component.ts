@@ -7,8 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+username:any;
+  constructor(private route:Router) {
+    this.username = localStorage.getItem('username');
+   }
 
-  constructor(private route:Router) { }
+
+
 
   ngOnInit(): void {
   }

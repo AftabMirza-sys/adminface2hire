@@ -1,3 +1,4 @@
+import { Token } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import{UsersdataService} from '../services/usersdata.service';
 
@@ -8,10 +9,12 @@ import{UsersdataService} from '../services/usersdata.service';
 })
 export class GetuserdataComponent implements OnInit {
   user:any;
+  createdby :any;
   constructor(private usersdata:UsersdataService) { 
     this.usersdata.userdata().subscribe((userdata)=>{
       console.warn("userdata",userdata);
       this.user = userdata;
+      this.createdby = localStorage.getItem('token');
       
     });
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class RolesComponent implements OnInit {
   }
   message: boolean = false;
   onSubmit(rolesdata: any) {
-    this.http.post('http://localhost:3300/roles/addRole', rolesdata).subscribe((result) => {
+    this.http.post(environment.baseUrl+'/roles/addRole', rolesdata).subscribe((result) => {
       console.warn("result", result);
       this.message = true;
     });

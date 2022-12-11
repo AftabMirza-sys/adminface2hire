@@ -10,6 +10,7 @@ import {DegreedataService} from "../services/degreedata.service";
 export class GetdegreedataComponent implements OnInit {
 
   
+ 
 
   degree:any;
   constructor(private catedata:DegreedataService) { 

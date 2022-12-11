@@ -159,23 +159,29 @@
        
               <br>
               <form #createuser ="ngForm"(ngSubmit)="onSubmit(createuser.value)" >
-                <input type="text" class="form-control" name="userName" placeholder="Write User Name" required ngModel id="uninput" required  ngModel>
-                <input type="text" class="form-control" name="firstName" placeholder="Write First Name" required  ngModel id="finput" required ngModel> <br>
-                <input type="text" class="form-control" name="lastName" placeholder="Write Last Name" required ngModel id="uninput" required ngModel>
-                <input type="text" class="form-control" name="email" placeholder="Write Email Address " required  ngModel id="finput" required ngModel><br>
-                <input type="password" class="form-control" name="password" placeholder="Write Password" required ngModel id="uninput" required ngModel>
-                <input type="text" class="form-control" name="role" placeholder="Write Role" required  ngModel id="finput" required ngModel><br>
-                <input type="text" class="form-control" name="phoneNo" placeholder="Write PhoneNo" required ngModel id="uninput" required ngModel>
-                <input type="text" class="form-control" name="cell" placeholder="Write CellNo" required  ngModel id="finput" required ngModel><br>
-                <input type="text" class="form-control" name="address1" placeholder="Write Address" required ngModel id="uninput" required ngModel>
-                <input type="text" class="form-control" name="zipCode" placeholder="Write ZipCode" required  ngModel id="finput" required ngModel>
+                <input type="text" class="form-control" name="userName" placeholder="Write User Name" required  id="uninput" required  ngModel>
+                <input type="text" class="form-control" name="firstName" placeholder="Write First Name" required   id="finput" required ngModel> <br>
+                <input type="text" class="form-control" name="lastName" placeholder="Write Last Name" required  id="uninput" required ngModel>
+                <input type="text" class="form-control" name="email" placeholder="Write Email Address " required   id="finput" required ngModel><br>
+                <input type="password" class="form-control" name="password" placeholder="Write Password" required  id="uninput" required ngModel>
+                <select type="text" class="form-control" name="role" id="uninput" required ngModel  style="margin-bottom: 10px; margin-right: 20px;">
+                  <option value="">Select Role</option>
+                  <option value="{{item._id}}" *ngFor="let item of role.data">{{item.name}}</option>
+                </select><br>
+                <input type="text" class="form-control" name="phoneNo" placeholder="Write PhoneNo" required  id="uninput" required ngModel>
+                <input type="text" class="form-control" name="cell" placeholder="Write CellNo" required   id="finput" required ngModel><br>
+                <input type="text" class="form-control" name="address1" placeholder="Write Address" required  id="uninput" required ngModel>
+                <input type="text" class="form-control" name="zipCode" placeholder="Write ZipCode" required   id="finput" required ngModel>
+                <label for="emailVerified" id="finput" style="margin-right:300px; margin-top:20px;">Email Verified</label>
                 <br>
+                
                <select name="emailVerified" id="uninput" class="form-control">
                 <option value="True">True</option>
                 <option value="False">False</option>
                </select>
+               <br> <br>
                 
-                <input type="text" class="form-control" name="createdBy" placeholder="Write Createdby" required  ngModel id="finput" required ngModel><br>
+                <input type="hidden" class="form-control" name="createdBy" [(ngModel)]="tokendata" value="{{tokendata}}" placeholder="Write Createdby" required  ngModel id="finput" required ngModel><br>
                 
                 
                 

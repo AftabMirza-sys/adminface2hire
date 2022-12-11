@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-categories',
@@ -8,15 +10,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
+userid : any;
+username:any;
+  constructor(private http: HttpClient, private route:Router) { 
+   this.userid = localStorage.getItem('token');
+   this.username = localStorage.getItem('username');
+  }
 
-  constructor(private http: HttpClient, private route:Router) { }
+
+
 
   ngOnInit(): void {
   }
 
   message: boolean = false;
   onSubmit(createcategory: any) {
-    this.http.post('http://localhost:3300/categories/addCategory',createcategory).subscribe((result) => {
+    this.http.post(environment.baseUrl+'/categories/addCategory',createcategory).subscribe((result) => {
       console.warn("result", result);
       this.message = true;
     });

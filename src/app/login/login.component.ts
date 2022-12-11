@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit {
 status:any;
 message:any;
 token:any;
+username:any;
   constructor(
    private authService : AuthService, private route : Router
   ) { }
@@ -25,9 +26,10 @@ this.status = res.status;
 
 if(this.status == true){
   this.token = res.data.id;
+  this.username = res.data.firstName;
   localStorage.setItem('token',this.token);
+  localStorage.setItem('username',this.username);
 this.route.navigate(['./dashboard']);
-
 }
 else
 {

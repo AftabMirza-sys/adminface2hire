@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FaqcategoryService {
 
-  url = "http://localhost:3300/faqCategory/listFaqCategory";
+  url = environment.baseUrl+"/faqCategory/listFaqCategory";
   constructor(private http:HttpClient) { }
   faqcategory()
   {

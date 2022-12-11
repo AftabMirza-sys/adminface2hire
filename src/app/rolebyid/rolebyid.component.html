@@ -13,7 +13,7 @@
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="./faq" class="nav-link">Faq</a>
+          <a href="index3.html" class="nav-link">Roles</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
           <a href="#" class="nav-link">Contact</a>
@@ -22,12 +22,8 @@
   
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
+        <!-- Navbar Search -->
         <Button class="btn btn-danger" (click)="onlogout()">Logout</Button>
-  
-        <!-- Messages Dropdown Menu -->
-     
-        <!-- Notifications Dropdown Menu -->
-        
       </ul>
     </nav>
     <!-- /.navbar -->
@@ -35,7 +31,7 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="./dashboard" class="brand-link align-items-center">
+      <a href="index3.html" class="brand-link align-items-center">
         <h2  class="ml-3">Faces2Hire</h2>
       </a>
   
@@ -47,7 +43,7 @@
             <img src="assets/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <i class="d-block" style="font-size: 20px; margin-top: 5px;">{{username}}</i>
+            <a href="#" class="d-block">Your Name</a>
           </div>
         </div>
   
@@ -76,6 +72,12 @@
                   </a>
                 </li>
                 <li class="nav-item">
+                    <a href="./rolebyid" class="nav-link active">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Role By Id</p>
+                    </a>
+                  </li>
+                <li class="nav-item">
                   <a href="./user" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Users</p>
@@ -96,7 +98,7 @@
                 <li class="nav-item">
                   <a href="./intrest" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Intrest</p>
+                    <p>Interest</p>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -118,15 +120,9 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./faq" class="nav-link active ">
+                  <a href="./faq" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Faq</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="./faqcategory" class="nav-link ">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Faq Category</p>
                   </a>
                 </li>
   
@@ -152,40 +148,18 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">Faq </h1>
+              <h1 class="m-0">Roles </h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="./faq">Faq</a></li>
-                <li class="breadcrumb-item active">Faq Home</li>
+                <li class="breadcrumb-item"><a href="roles">Roles by Id</a></li>
+                <li class="breadcrumb-item active">Roles by id Home</li>
               </ol>
               
             </div><!-- /.col -->
-         <div class="col-sm mt-4 " id="maindiv">
-        <h2 class="mt-4" >CREATE FAQ</h2>
-        <div class="alert alert-success" *ngIf="message" >Successfully Faq Created<button class="alert alert-success" id="x"(click)="removemessage()">X</button> </div>
-        <form #faq ="ngForm"(ngSubmit)="onSubmit(faq.value)">
-          <input type="text" class="form-control" name="faqQuestion" placeholder="Write FaqQuestion" required ngModel><br>
-          <input type="text" class="form-control" name="faqAnswer" placeholder="Write FaqDescription" required  ngModel><br>
-          <input type="text" class="form-control" name="faqVideoUrl" placeholder="Provide video Url" required  ngModel><br>
-          <input type="text" class="form-control" name="faqVideoName" placeholder="Write Video Name" required  ngModel><br>
-          <select name="industryType" class="form-control" ngModel id="" style="width:80%; margin:0px auto;">
-            <option value="">Select Faq Category</option>
-            <option  value="{{item._id}}" *ngFor="let item of catetype.data">{{item.faqCatName}}</option>
-          </select>  
-          <input type="hidden" class="form-control" name="createdBy"  [(ngModel)]="userid" value="userid" required  ><br>
-
-          
-          
-          <input type="submit" class="btn btn-secondary mb-4" value="Create"><br>
-        </form>
-
-
-            
-         </div>
+     
           </div><!-- /.row -->
-         <br>
-         <app-getfaqdata></app-getfaqdata>
+         
         </div><!-- /.container-fluid -->
       </div>
       <!-- /.content-header -->
